@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>UMIDD - Project</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+  <!-- <script src="scriptsrnd.js"></script> -->
+</head>
+<body>
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><img src="NITD_Logo.png" alt="Nit logo" class="logo"></a>
+      <a class="navbar-brand" href="#" style="color: DodgerBlue;">UMIDD Project</a>
+      <a class="navbar-brand" href="#"><img src="TCS_logo.png" alt="tcs logo" class="logo"></a>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <!-- <li>Home</li>
+        <li>About</li> -->
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h2>About Our Project</h2>      
+    <p>The UMIDD Project is a collaboration between NIT Durgapur and TCS Mumbai. Our project focuses on gesture recognition technology, utilizing advanced tools and frameworks. Whether you're exploring gestures for control, our project showcases a range of intuitive gestures. Dive into our video gallery demonstrating gesture-controlled applications for platforms like YouTube, VLC, and Facebook.</p>
+  </div>
+</div>
+
+<div class="container-fluid bg-3 text-center">    
+  <h3 class="centered-heading">About Our Gesture</h3><br>
+  <h4 class="left-aligned-heading">Dynamic Gesture</h4><br>
+
+  <div class="container-fluid bg-3 text-center">
+    <div class="row">
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/up.gif" alt="Swipe Up" class="gif" data-speech="Swipe Up - Informal way to scroll up from down.">
+          </div>
+          <div class="caption">
+            <p>Swipe Up</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/down.gif" alt="Swipe Down" class="gif" data-speech="Swipe Down - Informal way to scroll down.">
+          </div>
+          <div class="caption">
+            <p>Swipe Down</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/left.gif" alt="Swipe Left" class="gif" data-speech="Swipe Left - Moving the right hand horizontally in the direction from left to right with palm facing the leftward direction.">
+          </div>
+          <div class="caption">
+            <p>Swipe Left</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/right.gif" alt="Swipe Right" class="gif" data-speech="Swipe Right - Moving the right hand horizontally with the palm facing the screen in the direction from right to left.">
+          </div>
+          <div class="caption">
+            <p>Swipe Right</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/Enter.gif" alt="Enter" class="gif" data-speech="Enter - Opening index and middle finger in a victory position.">
+          </div>
+          <div class="caption">
+            <p>Enter</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/select all.gif" alt="Select All" class="gif" data-speech="Select All - Left-hand palm facing the screen while the right-hand index finger folds till 90 degrees from the vertical positions.">
+          </div>
+          <div class="caption">
+            <p>Select All</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/tab.gif" alt="Tab" class="gif" data-speech="Tab - Making a victory gesture from the right hand and slowly converting it into a fist.">
+          </div>
+          <div class="caption">
+            <p>Tab</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-6 col-sm-3 col-md-1">
+        <div class="thumbnail">
+          <div class="img-container">
+            <img src="GIF/backspace.gif" alt="Backspace" class="gif" data-speech="Backspace - moving the right-hand fist from right to left with the thumb pointing towards the left.">
+          </div>
+          <div class="caption">
+            <p>Backspace</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div><br>
+  
+
+<h4 class="left-aligned-heading">Static Gesture</h4><br>
+<!--
+<div class="container-fluid bg-3 text-center">
+  <div class="row">
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/up.gif" alt="Swipe Up" class="gif">
+        </div>
+        <div class="caption">
+          <p>Swipe Up</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/down.gif" alt="Swipe Down" class="gif">
+        </div>
+        <div class="caption">
+          <p>Swipe Down</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/left.gif" alt="Swipe Left" class="gif">
+        </div>
+        <div class="caption">
+          <p>Swipe Left</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/right.gif" alt="Swipe Right" class="gif">
+        </div>
+        <div class="caption">
+          <p>Swipe Right</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/Enter.gif" alt="Enter" class="gif">
+        </div>
+        <div class="caption">
+          <p>Enter</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/select all.gif" alt="Select All" class="gif">
+        </div>
+        <div class="caption">
+          <p>Select All</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/tab.gif" alt="Tab" class="gif">
+        </div>
+        <div class="caption">
+          <p>Tab</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-1">
+      <div class="thumbnail">
+        <div class="img-container">
+          <img src="GIF/backspace.gif" alt="Backspace" class="gif">
+        </div>
+        <div class="caption">
+          <p>Backspace</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br> -->
+
+<!-- Video Gallery Section -->
+<div class="container-fluid bg-3 text-center">
+  <h3 class="centered-heading">Video Gallery</h3><br>
+  <div class="row">
+    <div class="col-sm-3 video-container">
+      <div class="thumbnail">
+        <video class="video-element" controls data-voice="To control YouTube: To increase volume, perform a swipe up gesture with your hand. To decrease volume, perform a scroll down gesture with your hand. To play or pause the video, use an enter gesture. To skip forward 5 seconds in the video, perform a swipe right gesture. To skip backward 5 seconds in the video, perform a swipe left gesture.">
+          <source src="videos/YT_Control.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">
+          <p data-voice="Youtube Control">Youtube Control</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 video-container">
+      <div class="thumbnail">
+        <video class="video-element" controls data-voice="To control VLC based Video: Swipe up with your hand to increase the volume. Scroll down with your hand to decrease the volume. Use an enter gesture to play or pause the video. Swipe right to skip forward the video. Swipe left to skip backward the video.">
+          <source src="videos/VLC_Demo1.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">
+          <p data-voice="VLC Video Control">VLC Video Control</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 video-container">
+      <div class="thumbnail">
+        <video class="video-element" controls data-voice="To control VLC based Audio: Swipe up with your hand to increase the volume. Scroll down with your hand to decrease the volume. Use an enter gesture to play or pause the video. Swipe right for next song. Swipe left for previous song.">
+          <source src="videos/VLC_Audio.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">
+          <p data-voice="VLC Audio Control">VLC Audio Control</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 video-container">
+      <div class="thumbnail">
+        <video class="video-element" controls data-voice="To control Facebook: Swipe up gesture with your hand to scroll up the page. Swipe down gesture with your hand to scroll down the page. Use the 'Backspace' gesture to go back to the previous menu.">
+          <source src="videos/Facebook_Demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="caption">
+          <p data-voice="Facebook Control">Facebook Control</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><br>
+
+
+  <!-- Hand Gesture Recognition Section -->
+  <!-- <div class="container-fluid text-center">
+    <h3 class="centered-heading">Hand Gesture Recognition Test</h3>
+    <button id="webcamButton" class="btn btn-primary">ENABLE WEBCAM</button>
+    <div class="videoView" style="position: relative;">
+      <video id="webcam" style="position: absolute; left: 0px; top: 0px;" autoplay playsinline></video>
+      <canvas class="output_canvas" id="output_canvas" style="position: absolute; left: 0px; top: 0px;"></canvas>
+      <p id='gesture_output' class="output" style="position: relative;"></p>
+    </div>
+  </div>
+
+  <script src="scriptsrnd.js" type="module"></script> -->
+
+
+
+<!-- Installation Guide Section -->
+<div class="container-fluid bg-3 text-center">
+  <h3 class="centered-heading">Installation Guide</h3><br>
+  <div class="panel panel-default installation-guide-panel">
+    <div class="panel-body">
+      <ul class="list-group text-left installation-guide">
+        <li class="list-group-item"><i class="glyphicon glyphicon-download-alt"></i> Install Python version 3.9.</li>
+        <li class="list-group-item"><i class="glyphicon glyphicon-download-alt"></i> Install an IDE (Integrated Development Environment) such as Jupyter Notebook or VS Code, etc.</li>
+        <li class="list-group-item"><i class="glyphicon glyphicon-console"></i> Create a conda environment (using <code>conda create -n myenv python=3.9</code>) or create one via Anaconda Navigator.</li>
+        <li class="list-group-item"><i class="glyphicon glyphicon-download-alt"></i> Install Python libraries: <code>mediapipe</code>, <code>tensorflow</code>, <code>joblib</code>, <code>scikit-learn</code>, <code>opencv-python</code>, <code>matplotlib</code>, <code>numpy</code>.</li>
+        <li class="list-group-item"><i class="glyphicon glyphicon-cog"></i> Set the location of the respective deep learning and machine learning models in the code segment.</li>
+        <li class="list-group-item"><i class="glyphicon glyphicon-camera"></i> If using an integrated camera, set the camera index to 0; use index 1 for a secondary camera.</li>
+        <li class="list-group-item"><i class="glyphicon glyphicon-play"></i> Execute the code and demonstrate various hand gestures to observe different actions without manual intervention.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<!-- Feedback Button -->
+<div class="container-fluid text-center">
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#feedbackModal">Click Here For Feedback</button>
+</div>
+
+<!-- Feedback Modal -->
+<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="feedbackModalLabel">Feedback Form</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe src="https://forms.gle/P5b2Vm4rncAGaiDLA?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br>
+<br><br><br><br>
+
+
+
+<footer class="container-fluid text-center">
+  <p>&copy; 2022-<?php echo date("Y"); ?> NIT Durgapur collaborate with TCS Mumbai</p>
+</footer>
+
+</body>
+</html>
