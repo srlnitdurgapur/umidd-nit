@@ -152,6 +152,24 @@ h3, h4 {
     font-size: 14px;
 }
 
+.contact-item {
+    background-color: #f0f9ff;
+    border: 1px solid #cce5ff;
+}
+
+.contact-item i {
+    color: #17a2b8;
+}
+
+.contact-item a {
+    color: #007bff;
+    
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
 
 /* Feedback Button */
 .btn-primary {
